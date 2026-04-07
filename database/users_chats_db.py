@@ -240,7 +240,7 @@ class Database:
         seconds_since_midnight = (current_time - datetime.datetime(current_time.year, current_time.month, current_time.day, 0, 0, 0, tzinfo=ist_timezone)).total_seconds()
         time_diff = current_time - pastDate
         total_seconds = time_diff.total_seconds()
-        return total_seconds <= seconds_since_midnight
+        return total_seconds <= 31
 
     async def user_verified(self, user_id):
         user = await self.get_notcopy_user(user_id)
@@ -255,7 +255,7 @@ class Database:
         seconds_since_midnight = (current_time - datetime.datetime(current_time.year, current_time.month, current_time.day, 0, 0, 0, tzinfo=ist_timezone)).total_seconds()
         time_diff = current_time - pastDate
         total_seconds = time_diff.total_seconds()
-        return total_seconds <= seconds_since_midnight
+        return total_seconds <= 32
 
     async def use_second_shortener(self, user_id, time):
         user = await self.get_notcopy_user(user_id)
